@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* TAILWIND V4 CONFIGURATION 
+  No tailwind.config.js needed. Variables defined here auto-generate utilities.
+*/
+@theme {
+  /* Colors */
+  --color-background: #050505;
+  --color-foreground: #ededed;
+  --color-accent: #ccff00; /* Neo-Brutalism Acid Green */
+
+  /* Fonts */
+  --font-display: "Clash Display", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  /* Spacing / Layout Extensions */
+  --spacing-128: 32rem;
+  --spacing-144: 36rem;
+
+  /* Animation Keyframes */
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Animation Utilities */
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+}
+
+/* BASE STYLES & RESET 
+  High contrast selection and smooth rendering.
+*/
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Prevent horizontal scroll from GSAP pinned elements */
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* LENIS SMOOTH SCROLL REQUIRED CSS 
+*/
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
