@@ -4,6 +4,7 @@ import SmoothScroll from '@/components/providers/SmoothScroll';
 import PageTransitionOverlay from '@/components/ui/PageTransitionOverlay';
 import Navigation from '@/components/modules/Navigation';
 import Cursor from '@/components/ui/Cursor';
+import Footer from '@/components/modules/Footer';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -30,4 +31,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   );
+
 }
