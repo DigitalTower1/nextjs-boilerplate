@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
-import Hero from '@/components/modules/Hero';
+import Hero from '@/components/modules/Hero/Hero';
+import HeroBackground from '@/components/modules/Hero/HeroBackground';
 import SelectedWorks from '@/components/modules/SelectedWorks';
 import Services from '@/components/modules/Services';
 import TeamGrid from '@/components/modules/TeamGrid';
@@ -21,4 +22,5 @@ export default function HomePage() {
       <ContactForm />
     </>
   );
+
 }
